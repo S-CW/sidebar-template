@@ -28,22 +28,36 @@ import { RouterModule } from '@angular/router';
 })
 export class SidebarComponent {
   sidebarShow = true;
-  dropdownStates: { [key: string]: boolean } = {
+  subMenuStates: { [key: string]: boolean } = {
     create: false,
     todoList: false,
   };
 
   toggleSidebar() {
     this.sidebarShow = !this.sidebarShow;
+
+    if (!this.sidebarShow) {
+      // timeout is set for smooth transition when closing sidebar
+      setTimeout(() => {
+        Object.keys(this.subMenuStates).forEach((key) => {
+          this.subMenuStates[key] = false;
+        });
+      });
+    }
   }
 
-  toggleDropdown(state: string) {
-    Object.keys(this.dropdownStates).forEach((key) => {
+  toggleSubMenu(state: string) {
+    Object.keys(this.subMenuStates).forEach((key) => {
       if (key !== state) {
-        this.dropdownStates[key] = false;
+        this.subMenuStates[key] = false;
       } else {
-        this.dropdownStates[state] = !this.dropdownStates[state];
+        this.subMenuStates[state] = !this.subMenuStates[state];
       }
     });
+
+    // open side bar when sub menu is clicked
+    if (!this.sidebarShow) {
+      this.sidebarShow = true;
+    }
   }
 }

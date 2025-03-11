@@ -3,7 +3,7 @@
     <li>
       <span class="logo">coding2go</span>
       <button id="toggle-btn" (click)="toggleSidebar()">
-        <i class="fa-solid fa-angles-left" [class.rotate]="sidebarShow"></i>
+        <i class="fa-solid fa-angles-right" [class.rotate]="sidebarShow"></i>
       </button>
     </li>
     <li routerLink="index" routerLinkActive="active">
@@ -19,17 +19,17 @@
       </a>
     </li>
     <li>
-      <button (click)="toggleDropdown('create')" class="dropdown-btn">
+      <button (click)="toggleSubMenu('create')" class="dropdown-btn">
         <i class="fa-solid fa-folder-plus"></i>
         <span>Create</span>
         <i
           class="fa-solid fa-chevron-down"
-          [class.rotate]="dropdownStates['create']"
+          [class.rotate]="subMenuStates['create']"
         ></i>
       </button>
       <ul
         class="sub-menu"
-        [@slideDown]="dropdownStates['create'] ? 'open' : 'close'"
+        [@slideDown]="subMenuStates['create'] ? 'open' : 'close'"
       >
         <li routerLink="create/folder" routerLinkActive="active">
           <a>Folder</a>
@@ -43,17 +43,17 @@
       </ul>
     </li>
     <li>
-      <button (click)="toggleDropdown('todoList')" class="dropdown-btn">
+      <button (click)="toggleSubMenu('todoList')" class="dropdown-btn">
         <i class="fa-solid fa-list-ul"></i>
         <span>Todo-Lists</span>
         <i
           class="fa-solid fa-chevron-down"
-          [class.rotate]="dropdownStates['todoList']"
+          [class.rotate]="subMenuStates['todoList']"
         ></i>
       </button>
       <ul
         class="sub-menu"
-        [@slideDown]="dropdownStates['todoList'] ? 'open' : 'close'"
+        [@slideDown]="subMenuStates['todoList'] ? 'open' : 'close'"
       >
         <li routerLink="todo-list/work" routerLinkActive="active">
           <a>Work</a>
