@@ -6,14 +6,14 @@
         <i class="fa-solid fa-bars"></i>
       </button>
     </li>
-    <li class="active">
-      <a routerLink="index">
+    <li routerLink="index" routerLinkActive="active">
+      <a>
         <i class="fa-solid fa-house"></i>
         <span>Home</span>
       </a>
     </li>
-    <li>
-      <a routerLink="dashboard">
+    <li routerLink="dashboard" routerLinkActive="active">
+      <a>
         <i class="fa-solid fa-gauge"></i>
         <span>Dashboard</span>
       </a>
@@ -25,10 +25,14 @@
         <i class="fa-solid fa-chevron-down"></i>
       </button>
       <ul class="sub-menu">
-        <li>
-          <a href="#">Folder</a>
-          <a href="#">Document</a>
-          <a href="#">Project</a>
+        <li routerLink="create/folder" routerLinkActive="active">
+          <a>Folder</a>
+        </li>
+        <li routerLink="create/document" routerLinkActive="active">
+          <a>Document</a>
+        </li>
+        <li routerLink="create/project" routerLinkActive="active">
+          <a>Project</a>
         </li>
       </ul>
     </li>
@@ -39,12 +43,20 @@
         <i class="fa-solid fa-chevron-down"></i>
       </button>
       <ul class="sub-menu">
-        <li>
-          <a href="#">Work</a>
-          <a href="#">Private</a>
-          <a href="#">Coding</a>
-          <a href="#">Gardening</a>
-          <a href="#">School</a>
+        <li routerLink="todo-list/work" routerLinkActive="active">
+          <a>Work</a>
+        </li>
+        <li routerLink="todo-list/private" routerLinkActive="active">
+          <a>Private</a>
+        </li>
+        <li routerLink="todo-list/coding" routerLinkActive="active">
+          <a>Coding</a>
+        </li>
+        <li routerLink="todo-list/gardening" routerLinkActive="active">
+          <a>Gardening</a>
+        </li>
+        <li routerLink="todo-list/school" routerLinkActive="active">
+          <a>School</a>
         </li>
       </ul>
     </li>
@@ -54,13 +66,11 @@
         <span>Calendar</span>
       </a>
     </li>
-    <li>
-      <a routerLink="profile">
+    <li routerLink="profile" routerLinkActive="active">
+      <a>
         <i class="fa-solid fa-user"></i>
         <span>Profile</span>
       </a>
     </li>
   </ul>
 </nav>
-
-<h2><i class="fa-solid fa-check"></i></h2>
