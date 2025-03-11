@@ -13,6 +13,7 @@ import { GardeningComponent } from './views/todo-list/gardening/gardening.compon
 import { PrivateComponent } from './views/todo-list/private/private.component';
 import { SchoolComponent } from './views/todo-list/school/school.component';
 import { WorkComponent } from './views/todo-list/work/work.component';
+import { TodoListComponent } from './views/todo-list/todo-list.component';
 
 export const routes: Routes = [
   {
@@ -47,6 +48,7 @@ export const routes: Routes = [
   },
   {
     path: 'todo-list',
+    component: TodoListComponent,
     children: [
       {
         path: 'work',
