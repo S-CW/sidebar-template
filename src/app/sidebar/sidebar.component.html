@@ -1,9 +1,9 @@
-<nav id="sidebar">
+<nav id="sidebar" [@slideSidebar]="sidebarShow ? 'open' : 'close'">
   <ul>
     <li>
       <span class="logo">coding2go</span>
-      <button id="toggle-btn">
-        <i class="fa-solid fa-bars"></i>
+      <button id="toggle-btn" (click)="toggleSidebar()">
+        <i class="fa-solid fa-angles-left" [class.rotate]="sidebarShow"></i>
       </button>
     </li>
     <li routerLink="index" routerLinkActive="active">
