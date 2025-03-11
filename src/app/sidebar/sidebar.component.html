@@ -22,9 +22,15 @@
       <button (click)="toggleDropdown('create')" class="dropdown-btn">
         <i class="fa-solid fa-folder-plus"></i>
         <span>Create</span>
-        <i class="fa-solid fa-chevron-down"></i>
+        <i
+          class="fa-solid fa-chevron-down"
+          [class.rotate]="dropdownStates['create']"
+        ></i>
       </button>
-      <ul class="sub-menu" [@slideDown]="dropdownStates['create'] ? 'open' : 'close'">
+      <ul
+        class="sub-menu"
+        [@slideDown]="dropdownStates['create'] ? 'open' : 'close'"
+      >
         <li routerLink="create/folder" routerLinkActive="active">
           <a>Folder</a>
         </li>
@@ -40,9 +46,15 @@
       <button (click)="toggleDropdown('todoList')" class="dropdown-btn">
         <i class="fa-solid fa-list-ul"></i>
         <span>Todo-Lists</span>
-        <i class="fa-solid fa-chevron-down"></i>
+        <i
+          class="fa-solid fa-chevron-down"
+          [class.rotate]="dropdownStates['todoList']"
+        ></i>
       </button>
-      <ul class="sub-menu" [@slideDown]="dropdownStates['todoList'] ? 'open' : 'close'">
+      <ul
+        class="sub-menu"
+        [@slideDown]="dropdownStates['todoList'] ? 'open' : 'close'"
+      >
         <li routerLink="todo-list/work" routerLinkActive="active">
           <a>Work</a>
         </li>

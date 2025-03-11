@@ -66,3 +66,12 @@
 .active {
   color: var(--accent-clr) !important;
 }
+
+.dropdown-btn i {
+  transition: 200ms ease;
+}
+
+.rotate {
+  rotate: 180deg;
+
+}
