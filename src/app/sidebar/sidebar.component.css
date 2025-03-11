@@ -1,0 +1,68 @@
+#sidebar {
+  box-sizing: border-box;
+  height: 100vh;
+  width: 250px;
+  background-color: var(--base-clr);
+  padding: 5px 1em;
+
+  /* sticky css */
+  position: sticky;
+  top: 0;
+  align-self: start;
+
+  > ul > li:first-child {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+    cursor: unset;
+
+    .logo {
+      font-weight: 600;
+    }
+  }
+
+  li {
+    list-style: none;
+    cursor: pointer;
+
+    > a:hover, .dropdown-btn:hover {
+      color: var(--accent-clr);
+    }
+
+    a span,
+    .dropdown-btn span {
+      flex-grow: 1;
+    }
+
+    a, .dropdown-btn, .logo {
+      border-radius: .5em;
+      padding: .85em;
+      color: inherit;
+      display: flex;
+      gap: 1em;
+      align-items: center;
+    }
+
+    .dropdown-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font: inherit;
+      text-align: left;
+    }
+  }
+
+  i {
+    flex-shrink: 0;
+    color: var(--text-clr);
+  }
+
+  .sub-menu {
+    overflow: hidden;
+  }
+}
+
+.active {
+  color: var(--accent-clr) !important;
+}

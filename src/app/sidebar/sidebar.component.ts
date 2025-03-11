@@ -1,3 +1,10 @@
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
@@ -5,8 +12,28 @@ import { RouterModule } from '@angular/router';
   selector: 'app-sidebar',
   imports: [RouterModule],
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.css'
+  styleUrl: './sidebar.component.css',
+  animations: [
+    trigger('slideDown', [
+      state('close', style({ height: 0, opacity: 0 })),
+      state('open', style({ height: '*', opacity: 1 })),
+      transition('close <=> open', animate('300ms ease-in-out')),
+    ]),
+  ],
 })
 export class SidebarComponent {
+  dropdownStates: { [key: string]: boolean } = {
+    create: false,
+    todoList: false,
+  };
 
+  toggleDropdown(state: string) {
+    Object.keys(this.dropdownStates).forEach((key) => {
+      if (key !== state) {
+        this.dropdownStates[key] = false;
+      } else {
+        this.dropdownStates[state] = !this.dropdownStates[state];
+      }
+    });
+  }
 }
