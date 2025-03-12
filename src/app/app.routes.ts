@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import { CalendarComponent } from './views/calendar/calendar.component';
 import { CreateComponent } from './views/create/create.component';
 import { DocumentComponent } from './views/create/document/document.component';
@@ -12,14 +11,10 @@ import { CodingComponent } from './views/todo-list/coding/coding.component';
 import { GardeningComponent } from './views/todo-list/gardening/gardening.component';
 import { PrivateComponent } from './views/todo-list/private/private.component';
 import { SchoolComponent } from './views/todo-list/school/school.component';
-import { WorkComponent } from './views/todo-list/work/work.component';
 import { TodoListComponent } from './views/todo-list/todo-list.component';
+import { WorkComponent } from './views/todo-list/work/work.component';
 
 export const routes: Routes = [
-  {
-    path: '',
-    component: AppComponent,
-  },
   {
     path: 'index',
     component: IndexComponent,
