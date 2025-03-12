@@ -3,24 +3,24 @@
     <li>
       <span class="logo">coding2go</span>
       <button id="toggle-btn" (click)="toggleSidebar()">
-        <i class="fa-solid fa-angles-right" [class.rotate]="sidebarShow"></i>
+        <i class="fa-solid fa-angles-right icon-24" [class.rotate]="sidebarShow"></i>
       </button>
     </li>
     <li routerLink="index" routerLinkActive="active">
       <a>
-        <i class="fa-solid fa-house"></i>
+        <i class="fa-solid fa-house icon-24"></i>
         <span>Home</span>
       </a>
     </li>
     <li routerLink="dashboard" routerLinkActive="active">
       <a>
-        <i class="fa-solid fa-gauge"></i>
+        <i class="fa-solid fa-gauge icon-24"></i>
         <span>Dashboard</span>
       </a>
     </li>
     <li>
       <button (click)="toggleSubMenu('create')" class="dropdown-btn">
-        <i class="fa-solid fa-folder-plus"></i>
+        <i class="fa-solid fa-folder-plus icon-24"></i>
         <span>Create</span>
         <i
           class="fa-solid fa-chevron-down"
@@ -44,7 +44,7 @@
     </li>
     <li>
       <button (click)="toggleSubMenu('todoList')" class="dropdown-btn">
-        <i class="fa-solid fa-list-ul"></i>
+        <i class="fa-solid fa-list-ul icon-24"></i>
         <span>Todo-Lists</span>
         <i
           class="fa-solid fa-chevron-down"
@@ -74,13 +74,13 @@
     </li>
     <li routerLink="calendar" routerLinkActive="active">
       <a>
-        <i class="fa-solid fa-calendar-days"></i>
+        <i class="fa-solid fa-calendar-days icon-24"></i>
         <span>Calendar</span>
       </a>
     </li>
     <li routerLink="profile" routerLinkActive="active">
       <a>
-        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-user icon-24"></i>
         <span>Profile</span>
       </a>
     </li>

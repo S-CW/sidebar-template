@@ -5,8 +5,8 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -27,22 +27,32 @@ import { RouterModule } from '@angular/router';
   ],
 })
 export class SidebarComponent {
+  private _router = inject(Router);
+
   sidebarShow = true;
   subMenuStates: { [key: string]: boolean } = {
     create: false,
     todoList: false,
   };
 
+  constructor() {
+    this._router.events.subscribe((e) => {
+      if (e instanceof NavigationEnd) {
+        const segments = e.urlAfterRedirects.split('/');
+        if (segments.length > 2) {
+          return;
+        } else {
+          this.closeAllSubMenus();
+        }
+      }
+    });
+  }
+
   toggleSidebar() {
     this.sidebarShow = !this.sidebarShow;
 
     if (!this.sidebarShow) {
-      // timeout is set for smooth transition when closing sidebar
-      setTimeout(() => {
-        Object.keys(this.subMenuStates).forEach((key) => {
-          this.subMenuStates[key] = false;
-        });
-      });
+      this.closeAllSubMenus();
     }
   }
 
@@ -59,5 +69,14 @@ export class SidebarComponent {
     if (!this.sidebarShow) {
       this.sidebarShow = true;
     }
+  }
+
+  closeAllSubMenus() {
+    // timeout is set for smooth transition when closing sidebar
+    setTimeout(() => {
+      Object.keys(this.subMenuStates).forEach((key) => {
+        this.subMenuStates[key] = false;
+      });
+    });
   }
 }

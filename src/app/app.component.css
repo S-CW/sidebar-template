@@ -13,3 +13,12 @@ main {
   }
 }
 
+@media (max-width: 800px) {
+  :host {
+    flex-direction: column;
+  }
+
+  main {
+    padding: 2em 1em 60px 1em;
+  }
+}
